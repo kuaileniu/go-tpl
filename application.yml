@@ -1,0 +1,33 @@
+﻿server:
+  # port: 1215
+  port: 8015
+  # port: 80
+  #支持跨域
+  support_cors: true
+  read_timeout_second: 200
+  write_timeout_second: 600
+  # 开发环境:dev,prod,local
+  env: local
+  # env: prod
+  # 限流每秒请求数
+  rate_limite: 5000
+  # 缓存类型(小写字母) db,redis，于20240731作废此参数
+  # cache_type: db
+  # 系统在群中的节点排序号,需>=0,<=9
+  node: 1
+  # 访问access_token的有效分钟数,访问refresh_token的有效分钟数比此多5分钟
+  # access_token_expire_minutes: 30
+  access_token_expire_minutes: 999999930
+  # 访问refresh_token的有效分钟数，于20240731作废此参数
+  # refresh_token_expire_minutes: 999999999
+  allow-origins:
+    - 127.0.0.1
+    - 127.0.0.1:8848
+    - 127.0.0.1:8015
+    - copefab.com
+log:
+  maxage: 40
+  filename: ./logs/gotpl.log
+  # 日志级别 debug， info ，warn , error , dpanic , panic , fatal
+  level: debug
+  console: false
